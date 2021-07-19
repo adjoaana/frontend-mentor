@@ -1,0 +1,122 @@
+.card {
+  background-color: $darkBlue;
+  margin: 4rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
+  @include breakpoint-up(medium) {
+    margin: 5rem 20rem;
+  }
+  &-content {
+    @include breakpoint-up(medium) {
+      display: flex;
+    }
+  }
+  &-right {
+    height: 15rem;
+    background-image: url("/images/image-header-mobile.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up(medium) {
+      width: 30rem;
+      height: 26rem;
+      background-image: url("/images/image-header-desktop.jpg");
+      flex: 1;
+      order: 2;
+    }
+  }
+  &-left {
+    strong {
+      color: $softViolet;
+    }
+
+    @include breakpoint-up(medium) {
+      flex: 1;
+      order: 1;
+      line-height: 1.2;
+    }
+    @include breakpoint-down(small) {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+  &-intro {
+    @include breakpoint-down(large) {
+      padding: 0 1rem;
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    @include breakpoint-up(medium) {
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: left;
+      padding-bottom: 2rem;
+    }
+  }
+  &-left-text {
+    @include breakpoint-up(small) {
+      padding: 2rem;
+    }
+    @include breakpoint-up(medium) {
+      padding: 3.2rem;
+    }
+  }
+  &-description {
+    color: $slightlyTransparentWhite;
+    @include breakpoint-down(large) {
+      padding: 0 1rem;
+      padding-bottom: 2rem;
+      line-height: 1.6;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    @include breakpoint-up(medium) {
+      font-size: 1rem;
+      margin-right: 3rem;
+      padding-bottom: 4rem;
+      text-align: left;
+      line-height: 1.5;
+      color: $mainSlightlyTransparentWhite;
+    }
+  }
+  &-left-grid {
+    display: grid;
+    grid-template: 1fr;
+    @include breakpoint-down(large) {
+      text-align: center;
+    }
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(3, 1fr);
+      line-height: 1.5;
+    }
+  }
+  &-left-grid-item {
+    @include breakpoint-down(large) {
+      padding-bottom: 1.5rem;
+    }
+    h1 {
+      @include breakpoint-down(large) {
+        padding-bottom: 0.5rem;
+      }
+    }
+    h4 {
+      color: $mainSlightlyTransparentWhite;
+      font-size: 0.7rem;
+      font-weight: 400;
+    }
+  }
+}
+.overlay {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: $softViolet;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+  }
+}
